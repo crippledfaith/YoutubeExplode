@@ -285,6 +285,7 @@ namespace YoutubeExplode.DemoWpf.ViewModels
                 var progressHandler = new Progress<double>(p => Progress = p);
 
                 // Download to file
+                
                 await _youtube.Videos.Streams.DownloadAsync(streamInfo, filePath, progressHandler);
             }
             finally

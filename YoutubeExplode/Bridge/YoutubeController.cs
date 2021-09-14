@@ -100,7 +100,7 @@ namespace YoutubeExplode.Bridge
             VideoId videoId,
             CancellationToken cancellationToken = default)
         {
-            var url = $"https://youtube.com/watch?v={videoId}&bpctr=9999999999&hl=en";
+            var url = $"https://youtube.com/watch?v={videoId}hl=en";
 
             for (var retry = 0; retry <= 5; retry++)
             {
