@@ -4,7 +4,7 @@
 *.userosscache
 *.sln.docstates
 .idea/
-
+.vs/
 # Build results
 [Dd]ebug/
 [Dd]ebugPublic/
@@ -18,4 +18,5 @@ bld/
 [Oo]bj/
 
 # Coverage
-*.opencover.xml
+
+.vs/YoutubeExplode/DesignTimeBuild/.dtbcache.v2

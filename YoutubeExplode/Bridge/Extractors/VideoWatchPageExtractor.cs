@@ -25,7 +25,7 @@ namespace YoutubeExplode.Bridge.Extractors
             _content
                 .Source
                 .Text
-                .Pipe(s => Regex.Match(s, @"""label""\s*:\s*""([\d,\.]+) likes""").Groups[1].Value)
+                .Pipe(s => Regex.Match(s, @"""likeStatus"":""[A-Z]*"",""tooltip"":""([0-9,]*) / [0-9,]*""").Groups[1].Value)
                 .NullIfWhiteSpace()?
                 .StripNonDigit()
                 .ParseLongOrNull()
@@ -35,7 +35,7 @@ namespace YoutubeExplode.Bridge.Extractors
             _content
                 .Source
                 .Text
-                .Pipe(s => Regex.Match(s, @"""label""\s*:\s*""([\d,\.]+) dislikes""").Groups[1].Value)
+                .Pipe(s => Regex.Match(s, @"""likeStatus"":""[A-Z]*"",""tooltip"":""[0-9,]* / ([0-9,]*)""").Groups[1].Value)
                 .NullIfWhiteSpace()?
                 .StripNonDigit()
                 .ParseLongOrNull()
